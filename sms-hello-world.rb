@@ -11,8 +11,8 @@ set :port, 3000
 # setup authorization
 Freeclimb.configure do |config|
   # Configure HTTP basic authorization: fc
-  config.username = ENV['ACCOUNT_ID'] #'AC930e0519ddf3d4afb81e2f1f426e4d0ad0683f43'#ENV['ACCOUNT_ID']
-  config.password = ENV['API_KEY']#'08504d74fc29aff062596162a75b651563e3419f'#ENV['API_KEY']
+  config.username = ENV['ACCOUNT_ID']
+  config.password = ENV['API_KEY']
 end
 
 api_instance = Freeclimb::DefaultApi.new
