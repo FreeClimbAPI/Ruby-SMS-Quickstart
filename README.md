@@ -7,10 +7,6 @@ Specifically, the project will:
 - Receive an incoming message via a FreeClimb application
 - Respond "Hello World!" to the incoming message
 
-## Tutorial
-
-We do not currently offer a tutorial for the Ruby SMS Quickstart. Coming soon...
-
 ## Requirements
 A [FreeClimb account](https://www.freeclimb.com/dashboard/signup/)
 
@@ -21,7 +17,6 @@ A [configured FreeClimb number](https://docs.freeclimb.com/docs/getting-and-conf
 Trial accounts: a [verified number](https://docs.freeclimb.com/docs/using-your-trial-account#verifying-outbound-numbers)
 
 Tools:
-{Language specific but an example of Node.js is below}
 - [Ruby](https://www.ruby-lang.org/en/downloads/)
 - [Bundler](https://bundler.io/)
 - [RubyGems](https://rubygems.org/pages/download)
@@ -56,7 +51,6 @@ Tools:
     ```
     
 ## Running the Quickstart
-{Language specific but an example of Node.js is below}
 1. Start your voice quickstart application
 
     ```bash
