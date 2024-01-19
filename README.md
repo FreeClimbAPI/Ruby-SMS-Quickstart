@@ -8,6 +8,7 @@ Specifically, the project will:
 - Respond "Hello World!" to the incoming message
 
 ## Requirements
+
 A [FreeClimb account](https://www.freeclimb.com/dashboard/signup/)
 
 A [registered application](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#register-an-app) with a named alias
@@ -17,47 +18,55 @@ A [configured FreeClimb number](https://docs.freeclimb.com/docs/getting-and-conf
 Trial accounts: a [verified number](https://docs.freeclimb.com/docs/using-your-trial-account#verifying-outbound-numbers)
 
 Tools:
+
 - [Ruby](https://www.ruby-lang.org/en/downloads/)
 - [Bundler](https://bundler.io/)
 - [RubyGems](https://rubygems.org/pages/download)
 - [ngrok](https://ngrok.com/download) (recommended for hosting)
 
 ## Setting up the Quickstart
+
 1. Install the required packages
 
-    ```bash
-    bundle install
-    ```
+   ```bash
+   bundle install
+   ```
 
-2. Configure environment variables:
+2. Configure environment variables in separate .env file:
 
-    | ENV VARIABLE    | DESCRIPTION                                                                                                                                                                                                                               |
-    | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | ACCOUNT_ID      | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in dashboard.                                                                                                    |
-    | API_KEY         | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in dashboard.                                                                                                       |
- 
-3. Replace placeholder values for the `from` number:
+   | ENV VARIABLE | DESCRIPTION                                                                                                                            |
+   | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+   | ACCOUNT_ID   | Account ID which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in dashboard. |
+   | API_KEY      | API key which can be found under [API credentials](https://www.freeclimb.com/dashboard/portal/account/authentication) in dashboard.    |
 
-    | VARIABLE        | DESCRIPTION                                                                                                                                                                                                                               |
-    | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | TO              | The number which will receive messages from your application. For trial accounts, this is your [verified number](https://docs.freeclimb.com/docs/using-your-trial-account#verifying-outbound-numbers).                                    |
-    | FROM            | The number that sends messages from your application. Your FreeClimb number.                                                                                                                                                              |
- 
+3. Replace placeholder value `YOUR_FREECLIMB_NUMBER` with FreeClimb number in `sms-hello-world.rb`:
 
-4. [Configure your applications's endpoints](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#configure-your-application) by adding a publicly accessible URL (we recommend an [ngrok](https://ngrok.com/download) URL) and the route reference `/incomingSms` to your App Config's SMS URL field:
+   | VARIABLE | DESCRIPTION                                                                                                                                                                                            |
+   | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+   | TO       | The number which will receive messages from your application. For trial accounts, this is your [verified number](https://docs.freeclimb.com/docs/using-your-trial-account#verifying-outbound-numbers). |
+   | FROM     | The number that sends messages from your application. Your FreeClimb number.                                                                                                                           |
 
-    ```bash
-    https://YOUR-URL.ngrok.io/incomingSms
-    ```
-    
+4. Run ngrok
+   ```
+   bash
+   ngrok http 3000
+   ```
+5. [Configure your applications's endpoints](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#configure-your-application) by adding a publicly accessible URL (we recommend an [ngrok](https://ngrok.com/download) URL) and the route reference `/incomingSms` to your App Config's SMS URL field:
+
+   ```bash
+   https://{ngrok-generated-url}/incomingSms
+   ```
+
 ## Running the Quickstart
-1. Start your voice quickstart application
 
-    ```bash
-    bundle exec rake start
-    ```
+1. Start your sms quickstart application
 
-2. Text the FreeClimb number assigned to the application you've configured for this tutorial 
+   ```bash
+   bundle exec rake start
+   ```
+
+2. Text the FreeClimb number assigned to the application you've configured for this tutorial
 
 ## Feedback & Issues
+
 If you would like to give the team feedback or you encounter a problem, please [contact support](https://www.freeclimb.com/support/) or [submit a ticket](https://freeclimb.com/dashboard/portal/support) in the dashboard.
