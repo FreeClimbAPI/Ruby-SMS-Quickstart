@@ -6,5 +6,5 @@ task :start do
     puts "\t1. In NGROK, configure the dynamic url to proxy to http://127.0.0.1:3000"
     puts "\t2. Using the Dashboard or API, set your FreeClimb Application SMS Url to the dynamic endpoint NGROK generated\n\n"
 
-    %x[ruby sms-hello-world.rb]
+    %x[ruby server.rb]
 end
