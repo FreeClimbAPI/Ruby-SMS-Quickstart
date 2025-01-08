@@ -35,3 +35,15 @@ post '/incomingSms' do
   result = api_instance.send_an_sms_message(message_request)
   p result
 end
+
+# Liveness probe endpoint
+get '/live' do
+  content_type :json
+  { status: 'live' }.to_json
+end
+
+# Readiness probe endpoint
+get '/ready' do
+  content_type :json
+  { status: 'ready' }.to_json
+end
